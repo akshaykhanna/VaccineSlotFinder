@@ -1,3 +1,4 @@
+const covidVaccineLink = 'https://selfregistration.cowin.gov.in/';
 function recVacAlert(age = 18, minNoOfVac = 3, delay = 5000) {
   let attempt = 0;
   function bookSlot(element) {
@@ -11,6 +12,7 @@ function recVacAlert(age = 18, minNoOfVac = 3, delay = 5000) {
     console.log(`Looking for ${age}+ vaccine, attempt: ${++attempt}`);
     const searchButton = document.getElementsByClassName('pin-search-btn')[0];
     searchButton && console.log(`Clicking search btn`);
+    // debugger;
     searchButton.click();
     if(age >= 45) {
       const button45Plus = document.getElementById('c2');
@@ -22,7 +24,7 @@ function recVacAlert(age = 18, minNoOfVac = 3, delay = 5000) {
     }
     document.querySelectorAll('[href="/appointment"]').forEach( p => {
       const noOfVacs = +p.innerText;
-      console.log(noOfVacs);
+      // console.log(noOfVacs);
       noOfVacs && console.log(`Got ${noOfVacs} vaccines`);
       if(noOfVacs && noOfVacs >= minNoOfVac) {
         debugger;
