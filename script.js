@@ -1,5 +1,6 @@
+const pincode = ["176215", "176057"]
 const covidVaccineLink = 'https://selfregistration.cowin.gov.in/';
-function recVacAlert(age = 18, minNoOfVac = 3, delay = 5000) {
+function recVacAlert(age = 18, minNoOfVac = 3, shouldBook = true, delay = 5000) {
   let attempt = 0;
   function bookSlot(element) {
     console.log(`Booking slot for ${age}+ vaccine, in attempt: ${attempt}`)
@@ -27,9 +28,9 @@ function recVacAlert(age = 18, minNoOfVac = 3, delay = 5000) {
       // console.log(noOfVacs);
       noOfVacs && console.log(`Got ${noOfVacs} vaccines`);
       if(noOfVacs && noOfVacs >= minNoOfVac) {
-        debugger;
+        // debugger;
         clearInterval(timer);
-        bookSlot(p);
+        shouldBook ? bookSlot(p) :alert(`${noOfVacs} vaccines avialable for ${age} plus`) ;
         // alert(`${noOfVacs} vaccines avialable for ${age} plus`);
         // clearInterval(timer);
         return;
