@@ -1,5 +1,5 @@
 # VaccineSlotFinder
-JS browser script to find Vaccine Slot from UI.
+JS browser script to find Vaccine Slot from UI in India via cowin website.
 
 ## Prerequisite
  - Before running this do register yourself & your dependents using Adhaar card/s on https://selfregistration.cowin.gov.in
